@@ -80,9 +80,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                Log.e("directory", m_chosenDir );
-                break;
+
 
             case R.id.select_dir:
                 showDirectoryDialog();
@@ -143,7 +141,9 @@ public class MainActivity extends ActionBarActivity implements OnClickListener{
                 Intent i = new Intent(this, ProcessDataService.class);
                 stopService(i);
                 Log.d ("Packets received: ", ""+GlobalVariables.numPacketsReceived);
+                CreateSummary.appendText("Packets received: "+GlobalVariables.numPacketsReceived);
                 Log.d ("Packets processed: ", ""+GlobalVariables.numPacketsProcessed);
+                CreateSummary.appendText("Packets processed: "+GlobalVariables.numPacketsProcessed);
                 break;
 
             case R.id.eval:

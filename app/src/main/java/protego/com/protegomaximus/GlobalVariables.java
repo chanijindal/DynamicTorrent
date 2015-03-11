@@ -17,6 +17,9 @@ public class GlobalVariables {
     public static int numPacketsProcessed = 0;
     public static Boolean anomalyDetected =false;
     public static Boolean torrent = false;
+    public static Boolean anomalyNotify=false;
+    public static Boolean torrentNotify=false;
+    public static Boolean SwitchUI=false;
 
     public static void clearVar() {
         startTime = 0;

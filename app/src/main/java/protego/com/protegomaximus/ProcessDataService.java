@@ -98,7 +98,7 @@ public class ProcessDataService extends Service {
                         intent.setAction("com.Protego.CUSTOM_INTENT");
                         sendBroadcast(intent);
                         GlobalVariables.anomalyDetected=false;
-
+                        GlobalVariables.anomalyNotify=true;
                     }
                     else if(GlobalVariables.torrent==true )
                     {
@@ -106,6 +106,7 @@ public class ProcessDataService extends Service {
                         intent.setAction("com.Protego.CUSTOM_INTENT");
                         sendBroadcast(intent);
                         GlobalVariables.torrent=false;
+                        GlobalVariables.torrentNotify=true;
 
                     }
                     CreateLogFile.logData.append(GetTime.getCurrentTime()+": Record for the terminated connection created\n");

@@ -29,8 +29,19 @@ public class NotificationBroadcastReciever extends BroadcastReceiver {
                 new NotificationCompat.Builder(context);
         mBuilder.setAutoCancel(true);
         mBuilder.setSmallIcon(R.drawable.ic_launcher);
-        mBuilder.setContentTitle("New Message");
+        if(GlobalVariables.anomalyNotify)
+        {
+        mBuilder.setContentTitle("Protego");
         mBuilder.setContentText("Anomaly detected");
+            GlobalVariables.anomalyNotify=false;
+        }
+        if(GlobalVariables.torrentNotify)
+        {
+            mBuilder.setContentTitle("Protego");
+            mBuilder.setContentText("Torrent detected");
+            GlobalVariables.torrentNotify=false;
+        }
+
         mBuilder.setNumber(notification_number);
         Intent resultIntent = new Intent(context,MainActivity.class);
 

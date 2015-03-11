@@ -16,6 +16,9 @@
         <item>Display Dataset Used</item>
         <item>Display Log File</item>
         <item>Display Extracted Features</item>
+        <item>Display summary</item>
+        <item>UI ON</item>
+        <item>UI OFF</item>
     </string-array>
 
     <string name="title_activity_display_dataset">DisplayDataset</string>
@@ -23,5 +26,8 @@
     <string name="title_activity_display_model">DisplayModel</string>
     <string name="title_activity_display_log">DisplayLog</string>
     <string name="title_activity_display_extracted_features">DisplayExtractedFeatures</string>
+    <string name="title_activity_display_summary">DisplaySummary</string>
+
+
 
 </resources>

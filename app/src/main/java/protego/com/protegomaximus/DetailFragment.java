@@ -38,6 +38,22 @@ public class DetailFragment extends Fragment{
             Intent intent = new Intent(DetailFragment.this.getActivity(), DisplayExtractedFeatures.class);
             startActivity(intent);
         }
+        else if (choice.equals("Display summary"))
+        {
+            Intent intent = new Intent(DetailFragment.this.getActivity(), DisplaySummary.class);
+            startActivity(intent);
+        }
+        else if(choice.equals("UI ON"))
+        {
+            GlobalVariables.SwitchUI=false;
+
+        }
+        else if(choice.equals("UI OFF"))
+        {
+            GlobalVariables.SwitchUI=true;
+
+        }
+
         return view;
     }
 }

@@ -63,6 +63,11 @@
             android:label="@string/title_activity_display_extracted_features" >
         </activity>
 
+        <activity
+            android:name=".DisplaySummary"
+            android:label="@string/title_activity_display_summary" >
+        </activity>
+
         <service android:name=".ProcessDataService" />
         <service android:name=".TCPdumpHandler" />
 

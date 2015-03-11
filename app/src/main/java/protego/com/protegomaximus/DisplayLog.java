@@ -24,7 +24,7 @@ public class DisplayLog extends ActionBarActivity {
 
         CreateLogFile cr = new CreateLogFile();
 
-        cr.makeFile(this);
+        cr.makeFile("Activitylog.txt",CreateLogFile.logData.toString());
         String out = "";
 
         try {

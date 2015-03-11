@@ -77,6 +77,7 @@ public class TCPdumpHandler extends Service {
                 stopRefreshing();
                 return;
             }
+            //if(GlobalVariables.SwitchUI)
             isHandler.postDelayed(updateOutputText, refreshRate);
         }
     };
@@ -242,27 +243,28 @@ public class TCPdumpHandler extends Service {
                     Toast.makeText(this,
                             "tcpdump already started",
                             Toast.LENGTH_SHORT).show();
+                    buildNotification("Capture started","Protego");
                     break;
                 case -2:
 
 
-                    buildNotification("Error!!","Device not rooted");
+                    buildNotification("Device not rooted","Protego Error!!");
                     break;
                 case -4:
 
 
-                    buildNotification("Error!!","Command error");
+                    buildNotification("Command error","Protego Error!!");
                     break;
                 case -5:
 
 
-                    buildNotification("Error!!","OutputStream error");
+                    buildNotification("OutputStream error","Protego Error!!");
                     break;
                 default:
-                    buildNotification("Error!!","Unknown error");
+                    buildNotification("Unknown error","Protego Error!!");
             }
         } else {
-            buildNotification("Error!!","NetworkCommection error");
+            buildNotification("NetworkCommection error","Protego Error!!");
 
         }
 
@@ -278,27 +280,27 @@ public class TCPdumpHandler extends Service {
             case 0:
                 Toast.makeText(this,"tcpdump stopped",
                         Toast.LENGTH_SHORT).show();
-                buildNotification("Result","tcpdump successfully executed");
+                buildNotification("Capture stopped","Protego");
                 break;
             case -1:
                 Toast.makeText(this,"tcpdump already stopped",
                         Toast.LENGTH_SHORT).show();
                 break;
             case -2:
-                buildNotification("Error!!","Device not rooted");
+                buildNotification("Device not rooted","Protego Error!!");
                 break;
             case -4:
-                buildNotification("Error!!","Command error");
+                buildNotification("Command error","Protego Error!!");
             case -5:
-                buildNotification("Error!!","OutputStream error");
+                buildNotification("OutputStream error","Protego Error!!");
                 break;
             case -6:
-                buildNotification("Error!!","Close shell error");
+                buildNotification("Close shell error","Protego Error!!");
                 break;
             case -7:
-                buildNotification("Error!!","Process finish error");
+                buildNotification("Process finish error","Protego Error!!");
             default:
-                buildNotification("Error!!","Unknown error");
+                buildNotification("Unknown error","Protego Error!!");
         }
 
     }

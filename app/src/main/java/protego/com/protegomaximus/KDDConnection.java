@@ -135,19 +135,24 @@ public class KDDConnection {
         newConn = PastConnQueue.calculateTrafficFeatures(tempConn, newConn, GlobalVariables.last100Conn);
         newConn = LastTwoSecQueue.calculateTrafficFeatures(tempConn, newConn, GlobalVariables.lastTwoSec);
         //writeToARFF(ReadFile1.csvFile, newConn);
-        Log.d("EEERecord", newConn.convertRecord());
-        Log.d("EEEClassify", Tranny.classify(newConn.convertRecord()));
+        String record1 = newConn.convertRecord();
+        String classify = Tranny.classify(record1);
+        Log.d("EEERecord", record1);
+        Log.d("EEEClassify", classify);
 
-        if(Tranny.classify(newConn.convertRecord()).contains("anomaly")) {
+        if(classify.equals("anomaly")) {
             GlobalVariables.anomalyDetected = true;
             Log.e("AnomalyDetected", String.valueOf(GlobalVariables.anomalyDetected));
+            CreateSummary.appendText(record1+" :anomaly");
         }
-        else if(Tranny.classify(newConn.convertRecord()).contains("torrent")) {
+        else if(classify.equals("torrent")) {
             GlobalVariables.torrent = true;
             Log.e("Torrent", String.valueOf(GlobalVariables.torrent));
+            CreateSummary.appendText(record1+" :torrent");
 
         }
-
+        else
+              CreateSummary.appendText(record1+" :normal");
 
 
 
